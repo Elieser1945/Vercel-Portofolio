@@ -1,0 +1,300 @@
+/* --- Import Font --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* --- SCROLL OFFSET AGAR TIDAK TERPOTONG NAVBAR --- */
+html {
+    scroll-padding-top: 90px;
+}
+
+body {
+    color: #ffffff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* --- BACKGROUND ANIMASI ELEGAN --- */
+.bg-animated {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background: linear-gradient(45deg, #12002b, #2b0057, #001a4d, #004d4d);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* --- STICKY NAVBAR YANG KOKOH & TIDAK HILANG --- */
+.sticky-nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: rgba(18, 0, 43, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 9999;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 15px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.sticky-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 15px;
+    margin: 0;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.sticky-nav a {
+    color: #e6e6e6;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.sticky-nav a:hover,
+.sticky-nav a:focus {
+    background: linear-gradient(90deg, #ff007f, #7000ff);
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
+}
+
+/* --- LAYOUT UTAMA --- */
+.container {
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* --- GLASSMORPHISM PANEL --- */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.glass-panel:hover {
+    transform: translateY(-2px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* --- HERO SECTION (FOTO KIRI, TEKS KANAN) --- */
+.hero-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-left {
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.hero-right {
+    flex-grow: 1;
+}
+
+/* --- TYPOGRAPHY --- */
+h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 10px; color: #fff;}
+h2 { font-size: 1.2rem; font-weight: 400; color: #a3c2ff; margin-bottom: 20px;}
+h3 { font-size: 1.8rem; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 10px;}
+h4 { font-size: 1.2rem; color: #e6e6e6; margin-bottom: 5px; }
+h4 span { color: #8bb4ff; font-weight: 400; font-size: 1rem;}
+.subtitle { font-size: 0.9rem; color: #b3b3b3; margin-bottom: 15px; font-style: italic;}
+p { line-height: 1.6; font-size: 0.95rem; margin-bottom: 15px; color: #d9d9d9;}
+ul { margin-left: 20px; color: #d9d9d9; }
+li { margin-bottom: 10px; line-height: 1.5; font-size: 0.95rem;}
+
+/* --- PROFILE IMAGE KOTAK POTRET LEBIH BESAR --- */
+.profile-img {
+    width: 180px;
+    height: 240px;
+    border-radius: 16px;
+    object-fit: cover;
+    object-position: center 20%;
+    border: 3px solid #ff007f;
+    box-shadow: 0 0 15px rgba(255, 0, 127, 0.5);
+}
+
+/* --- BUTTONS (DISERAGAMKAN MENJADI GAYA SECONDARY) --- */
+.hero-buttons { display: flex; gap: 15px; margin: 20px 0; }
+.btn {
+    padding: 10px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+.btn-primary {
+    background: linear-gradient(90deg, #ff007f, #7000ff);
+    color: white;
+    border: none;
+}
+.btn-primary:hover { box-shadow: 0 0 15px #ff007f; }
+
+/* Menggunakan gaya btn-secondary untuk "View Projects" dan "View Resume" */
+.btn-secondary {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+.btn-secondary:hover { background: rgba(255,255,255,0.2); }
+.btn-small { padding: 8px 15px; font-size: 0.85rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 5px; text-decoration: none;}
+.btn-small:hover { background: rgba(255,255,255,0.2); }
+
+/* --- SOCIAL LINKS --- */
+.social-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.social-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 8px 16px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: rgba(255, 0, 127, 0.2);
+    border-color: #ff007f;
+    color: #ff99cc;
+}
+
+/* --- SKILLS SECTION STYLING --- */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+.skill-category h4 {
+    margin-bottom: 15px;
+    color: #fff;
+}
+.skill-list li {
+    list-style-type: square;
+    color: #d9d9d9;
+}
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.tag {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: #e6e6e6;
+    font-weight: 600;
+}
+.tag-soft {
+    background: rgba(112, 0, 255, 0.2);
+    border: 1px solid #7000ff;
+}
+
+/* --- PROJECT GRID (DISUSUN 2 KOLOM KONSISTEN) --- */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+.project-card {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.project-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.project-img-wide {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.tech-stack { font-size: 0.8rem; color: #ff99cc; margin-bottom: 10px; font-weight: 600;}
+.project-links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px;}
+
+/* --- CERTIFICATE GRID (DISUSUN 2 KOLOM KONSISTEN) --- */
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.cert-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+.cert-img:hover {
+    transform: scale(1.05);
+}
+
+/* --- RESPONSIVE MOBILE (MENJADI 1 KOLOM DI HP) --- */
+@media (max-width: 900px) {
+    .project-grid, .cert-grid {
+        grid-template-columns: 1fr;
+    }
+    .container { padding: 15px; }
+    .hero-section { flex-direction: column; text-align: center; }
+    .hero-buttons { justify-content: center; flex-direction: column; }
+    .social-links { justify-content: center; }
+    h1 { font-size: 2.2rem; }
+    .sticky-nav ul { gap: 8px; justify-content: center; }
+}
